@@ -22,11 +22,11 @@ if uploaded_file is not None:
     # ------------------------
     # 3️⃣ Clean & standardize columns
     # ------------------------
-    df = df[['Patient_ID', 'Treatment_arm', 'Pk']]  # Keep only relevant columns
-    df['Patient_ID'] = df['Patient_ID'].str.replace('CM-', '', regex=False)  # Remove CM- prefix
+    df = df[['Patient ID', 'Treatment_arm', 'Pk']]  # Keep only relevant columns
+    df['Patient ID'] = df['Patient ID'].str.replace('CM-', '', regex=False)  # Remove CM- prefix
     df['Treatment_arm'] = 'G' + df['Treatment_arm'].astype(str)  # Add G prefix
     df = df.rename(columns={
-        'Patient_ID': 'ID',
+        'Patient ID': 'ID',
         'Treatment_arm': 'Treatment arm',
         'Pk': 'PK'
     })
